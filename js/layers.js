@@ -71,23 +71,7 @@ addLayer("S", {
         { key: "s", description: "S: 进行秒重置", onPress() { if (canReset(this.layer)) doReset(this.layer) } },
     ],
     layerShown() { return true },
-    tabFormat: {
-        upgrades : {
-        buttonStyle() { return { 'color': 'write' } },
-        content: ["main-display",["display-text",function(){return "秒1重软上限从1e30秒开始"}],"prestige-button","upgrades"],
-      },
-     milestones: {
-        buttonStyle() { return { 'color': 'brown' } },
-        content:  ["main-display",["display-text",function(){return "秒1重软上限从1e30秒开始"}],"prestige-button"," milestones"]
-        }, 
-        buyables: {
-        buttonStyle() { return { 'color': 'write' } },
-        content:  ["main-display",["display-text",function(){return "秒1重软上限从1e30秒开始"}],"prestige-button"," buyables"]    },
-        challenges: {
-        buttonStyle() { return { 'color': 'write' } },
-        content:  ["main-display",["display-text",function(){return "秒1重软上限从1e30秒开始"}],"prestige-button","challenges"]
-        }
-    } ,
+   
     milestones: {
         0: {
             requirementDescription: "分（60秒）",
@@ -121,13 +105,7 @@ addLayer("S", {
             }
         },
 
-        4: {
-            requirementDescription: "世纪（1e85秒）",
-            effectDescription: "效果作者没做",
-            done() {
-                return player.S.points.gte(1e85)
-            }
-        },
+     
     },
     upgrades: {
         11: {
@@ -273,7 +251,7 @@ addLayer("S", {
             unlocked() { return hasUpgrade("S", 42) }
         },
         51: {
-            title: "秒1重软上限效果削弱(原来是^0.25)",
+            title: "秒1重软上限效果削弱，且增强软上限前获取",
             description: "",
             cost: new Decimal(1e37),
             effect() {
@@ -505,14 +483,10 @@ addLayer("A", {
     layerShown() { return true },
     upgrades: {
         11: {
-            title: "没做",
+            title: "恭喜通关",
             description: "",
             cost: new Decimal(25),
-            effect() {
-                let eff = new Decimal(2)
-                return eff
-            },
-            effectDisplay() { return `x${format(this.effect())}` },
+          
             unlocked() { return true }
         },
     },
