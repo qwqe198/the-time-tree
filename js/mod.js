@@ -1,7 +1,7 @@
 let modInfo = {
 	name: "The Time Tree",
 	id: "22222",
-	author: "liu和22222(主要是liu,22222是打酱油的)",
+	author: "22222",
 	pointsName: "时间点",
 	modFiles: ["layers.js", "tree.js"],
 
@@ -83,8 +83,8 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
-	function(){return "作者是liu和22222(主要是liu,22222是打酱油的)."},
-	function(){return "由于某些原因，削弱软上限的东西也会影响软上限之前资源的获取."},
+	function(){return "作者是22222，qq 2960729702."},
+
 ]
 
 // Determines when the game "ends"
