@@ -56,7 +56,7 @@ function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
 
-	let gain = new Decimal(1)
+	let gain = new Decimal(1e50)
 	if(hasUpgrade("S",11)) gain = gain.mul(upgradeEffect("S",11))
 	if(hasUpgrade("S",12)) gain = gain.mul(player.S.points.add(1).pow(0.5))
 	if(hasMilestone("S",0)) gain = gain.mul(2)

@@ -351,7 +351,7 @@ addLayer("T", {
     hotkeys: [
         { key: "T", description: "T: 进行时间机器重置", onPress() { if (canReset(this.layer)) doReset(this.layer) } },
     ],
-    layerShown() { return true },
+    layerShown() { return player.points.gte(1e28)||hasMilestone("T",0) },
     branches: ["S"],
     milestones: {
         0: {
@@ -480,7 +480,7 @@ addLayer("A", {
     hotkeys: [
         { key: "A", description: "A: 进行时间之沙重置", onPress() { if (canReset(this.layer)) doReset(this.layer) } },
     ],
-    layerShown() { return true },
+    layerShown() { return hasMilestone("T",6) },
     upgrades: {
         11: {
             title: "恭喜通关",
